@@ -12,7 +12,7 @@ It allows:
 - evaluating the model using Mean Absolute Error (MAE)
 
 ## Project structure
-
+```text
 ft_linear_regression/
 ├── data/
 │   └── data.csv
