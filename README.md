@@ -21,7 +21,7 @@ ft_linear_regression/
 │   ├── predict.py
 │   ├── evaluate.py
 │   └── utils.py
-
+```
 ## Requirements
 
 - Python 3.x
