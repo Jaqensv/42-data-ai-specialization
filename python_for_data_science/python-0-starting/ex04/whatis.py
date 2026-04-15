@@ -1,5 +1,6 @@
 import argparse
 
+
 def main():
 
     parser = argparse.ArgumentParser()
@@ -10,11 +11,12 @@ def main():
     assert parsed.args[0].lstrip("-").isdigit(), "argument is not an integer"
 
     number = int(parsed.args[0])
-    
+
     if number % 2 == 0:
         print("I'm Even.")
     else:
         print("I'm Odd.")
+
 
 if __name__ == "__main__":
     main()

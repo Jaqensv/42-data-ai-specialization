@@ -1,7 +1,8 @@
 import math
 
+
 def is_not_object(object: any):
-    
+
     if type(object) is bool:
         print(f"Fake : {object} {type(object)}")
     elif type(object) is str:
@@ -9,9 +10,10 @@ def is_not_object(object: any):
     elif type(object) is int:
         print(f"Zero : {object} {type(object)}")
 
+
 def NULL_not_found(object: any) -> int:
 
-    if (type(object) == float) and (math.isnan(object)):
+    if isinstance(object, float) and math.isnan(object):
         print(f"Cheese: {object} : {type(object)}")
         return 0
     elif object is None:
