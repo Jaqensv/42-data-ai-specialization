@@ -1,3 +1,10 @@
-certifi==2025.4.26
-meson==1.9.0
-wheel==0.45.1
+build==1.4.3
+flake8==7.3.0
+ft_package @ file:///Users/user/Desktop/42/42-data-ai-specialization/python_for_data_science/python-0-starting/ex09
+mccabe==0.7.0
+numpy==2.4.4
+packaging==26.1
+pycodestyle==2.14.0
+pyflakes==3.4.0
+pyproject_hooks==1.2.0
+tqdm==4.67.3
