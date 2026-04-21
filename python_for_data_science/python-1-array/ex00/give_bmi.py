@@ -1,7 +1,10 @@
 import numpy as np
 
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(
+    height: list[int | float],
+    weight: list[int | float]
+) -> list[int | float]:
     """Calculate BMI values from height and weight lists."""
 
     if len(height) != len(weight):
