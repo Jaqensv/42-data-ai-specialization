@@ -3,7 +3,7 @@ from numpy import ndarray as array
 
 
 def ft_load(path: str) -> array:
-
+    """Load and display RGB shape of an image"""
     if not path.lower().endswith((".jpg", ".jpeg")):
         raise ValueError("Format not supported")
 
