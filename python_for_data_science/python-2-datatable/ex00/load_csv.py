@@ -2,6 +2,7 @@ import pandas as pd
 
 
 def load(path: str) -> pd.DataFrame | None:
+    """Creates a dataframe from a csv"""
 
     try:
         df = pd.read_csv(path)
