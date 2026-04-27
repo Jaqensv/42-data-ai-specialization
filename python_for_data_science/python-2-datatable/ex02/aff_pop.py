@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from load_csv import load
 
 
-def convert(values):
+def convert(values) -> float:
     """Removes M and k and normalizes the values"""
 
     if "M" in values:
@@ -13,7 +13,7 @@ def convert(values):
     return float(values)
 
 
-def display_chart(df):
+def display_chart(df) -> None:
     """Displays a chart from a dataframe"""
 
     france = df.loc[df.eq("France").any(axis=1)]
@@ -31,8 +31,8 @@ def display_chart(df):
 
     plt.plot(x, y, label="France")
     plt.plot(x, y2, label="Venezuela")
-    plt.xlim(1800, 2050)
-    plt.ylim(0, 80)
+    plt.xlim(1800, 2070)
+    plt.ylim(0, 70)
     plt.xticks([1800, 1840, 1880, 1920, 1960, 2000, 2040])
     plt.yticks([20, 40, 60], ["20M", "40M", "60M"])
 
