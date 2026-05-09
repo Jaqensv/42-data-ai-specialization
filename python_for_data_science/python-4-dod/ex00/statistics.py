@@ -2,6 +2,7 @@ from typing import Any
 
 
 def selection_sort(values) -> list:
+    """Sorts the values using the selection sort algorithm."""
 
     new_values = []
     for value in values:
@@ -28,6 +29,7 @@ def selection_sort(values) -> list:
 
 
 def calculate_mean(values) -> float:
+    """Calculates the arithmetic mean of the values."""
 
     if not values:
         return None
@@ -42,6 +44,7 @@ def calculate_mean(values) -> float:
 
 
 def calculate_median(values) -> float:
+    """Calculates the median of the values."""
 
     if not values:
         return None
@@ -60,6 +63,7 @@ def calculate_median(values) -> float:
 
 
 def calculate_quartile(values) -> list[float]:
+    """Calculates the first and third quartiles."""
 
     if not values:
         return None
@@ -71,6 +75,7 @@ def calculate_quartile(values) -> list[float]:
 
 
 def calculate_std_deviation(var) -> float:
+    """Calculates the standard deviation from the variance."""
 
     if var is None:
         return None
@@ -81,6 +86,7 @@ def calculate_std_deviation(var) -> float:
 
 
 def calculate_variance(values, mean) -> float:
+    """Calculates the variance of the values."""
 
     if not values or mean is None:
         return None
@@ -96,6 +102,7 @@ def calculate_variance(values, mean) -> float:
 
 
 def display_results(results, kwargs) -> None:
+    """Displays the requested statistical results."""
 
     for value in kwargs.values():
         if value in results:
@@ -106,6 +113,7 @@ def display_results(results, kwargs) -> None:
 
 
 def ft_statistics(*args: Any, **kwargs: Any) -> None:
+    """Calculates and displays statistics from the given arguments."""
 
     ordered_values = None
 
