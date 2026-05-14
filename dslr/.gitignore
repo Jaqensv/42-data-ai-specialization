@@ -1,0 +1,9 @@
+# Python cache
+__pycache__/
+
+# Text files
+*.txt
+
+# Virtual environment
+venv/
+.env/
