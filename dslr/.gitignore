@@ -3,6 +3,7 @@ __pycache__/
 
 # Text files
 *.txt
+!requirements.txt
 
 # Virtual environment
 venv/
@@ -10,3 +11,6 @@ venv/
 
 # macOS
 .DS_Store
+
+# Data
+*.csv

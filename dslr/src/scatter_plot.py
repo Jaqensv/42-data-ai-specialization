@@ -7,8 +7,13 @@ from utils.load_csv import load_csv
 from utils.math_utils import calculate_mean
 
 
-def calculate_correlation(courses: pd.DataFrame) -> tuple[str | None, str | None]:
-    """Returns the pair of courses with the highest absolute Pearson correlation."""
+def calculate_correlation(
+    courses: pd.DataFrame
+) -> tuple[str | None, str | None]:
+    """
+    Returns the pair of courses with the
+    highest absolute Pearson correlation.
+    """
 
     if courses.empty or len(courses.columns) < 2:
         print("Not enough course data to calculate correlations.")
@@ -76,7 +81,7 @@ def display_scatter_plot(
 def main() -> None:
     """Loads the dataset and displays the most correlated course pair."""
 
-    _, courses = load_csv("data/dataset_train.csv")
+    _, courses = load_csv("data/dataset_train.csv", True)
 
     if courses is None or courses.empty:
         print("No course data available.")

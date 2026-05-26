@@ -72,7 +72,7 @@ def display_pair_plot(houses: pd.Series, courses: pd.DataFrame) -> None:
 def main() -> None:
     """Loads the training dataset and displays its course pair plot."""
 
-    houses, courses = load_csv("data/dataset_train.csv")
+    houses, courses = load_csv("data/dataset_train.csv", True)
 
     if houses is None or courses is None:
         return

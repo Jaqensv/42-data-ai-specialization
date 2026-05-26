@@ -10,10 +10,30 @@ def display_histogram(df: pd.DataFrame, houses: pd.Series) -> None:
 
     plt.figure()
 
-    plt.hist(df.loc[houses == "Ravenclaw", course], label="Ravenclaw", color="blue", alpha=0.5)
-    plt.hist(df.loc[houses == "Slytherin", course], label="Slytherin", color="green", alpha=0.5)
-    plt.hist(df.loc[houses == "Gryffindor", course], label="Gryffindor", color="red", alpha=0.5)
-    plt.hist(df.loc[houses == "Hufflepuff", course], label="Hufflepuff", color="gold", alpha=0.5)
+    plt.hist(
+        df.loc[houses == "Ravenclaw", course],
+        label="Ravenclaw",
+        color="blue",
+        alpha=0.5
+    )
+    plt.hist(
+        df.loc[houses == "Slytherin", course],
+        label="Slytherin",
+        color="green",
+        alpha=0.5
+    )
+    plt.hist(
+        df.loc[houses == "Gryffindor", course],
+        label="Gryffindor",
+        color="red",
+        alpha=0.5
+    )
+    plt.hist(
+        df.loc[houses == "Hufflepuff", course],
+        label="Hufflepuff",
+        color="gold",
+        alpha=0.5
+    )
 
     plt.title(f"Score distribution by house for {course}")
     plt.xlabel("Notes")
@@ -25,7 +45,7 @@ def display_histogram(df: pd.DataFrame, houses: pd.Series) -> None:
 def main() -> None:
     """Loads the training dataset and displays the selected histogram."""
 
-    y, df = load_csv("data/dataset_train.csv")
+    y, df = load_csv("data/dataset_train.csv", True)
     display_histogram(df, y)
 
 

@@ -1,4 +1,11 @@
 import pandas as pd
+from math import exp
+
+
+def calculate_sigmoid(z: float) -> float:
+    """Applies the sigmoid function to a score."""
+
+    return 1 / (1 + exp(-z))
 
 
 def selection_sort(values) -> list:
@@ -101,6 +108,7 @@ def calculate_variance(values, mean) -> float:
 
     return var
 
+
 def calculate_min_max(values) -> float:
     """Calculate min and max values from the given Series."""
 
@@ -126,7 +134,6 @@ def calculate_stats(values: pd.Series) -> tuple[float | int]:
         ordered_values = selection_sort(values)
 
     mean = None
-    median = None
     quartile = None
     std = None
     var = None
@@ -134,7 +141,6 @@ def calculate_stats(values: pd.Series) -> tuple[float | int]:
     max_value = None
 
     mean = calculate_mean(ordered_values)
-    median = calculate_median(ordered_values)
     quartile = calculate_quartile(ordered_values)
     var = calculate_variance(ordered_values, mean)
     std = calculate_std_deviation(var)

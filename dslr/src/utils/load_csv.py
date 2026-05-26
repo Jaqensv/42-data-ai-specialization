@@ -1,8 +1,10 @@
 import pandas as pd
 
 
-def load_csv(dataset: str) -> tuple[pd.Series, pd.DataFrame]:
-    """Loads and cleans up the dataset by dropping irrelevant columns."""
+def load_csv(
+    dataset: str, training: bool
+) -> tuple[pd.Series | None, pd.DataFrame | None]:
+    """Loads and cleans a training or test dataset."""
 
     try:
         df = pd.read_csv(dataset)
@@ -14,12 +16,16 @@ def load_csv(dataset: str) -> tuple[pd.Series, pd.DataFrame]:
         print("Dataset is empty.")
         return None, None
 
-    df = df.dropna()
+    y = None
 
-    y = df["Hogwarts House"]
+    if training:
+        df = df.dropna().reset_index(drop=True)
+        y = df["Hogwarts House"]
+    else:
+        df = df.reset_index(drop=True)
 
     df = df.drop(columns=[
-        "Hogwarts House", 
+        "Hogwarts House",
         "Index",
         "First Name",
         "Last Name",
