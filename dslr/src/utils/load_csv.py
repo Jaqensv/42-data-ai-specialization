@@ -1,10 +1,16 @@
 import pandas as pd
+import os
+from typing import Optional
 
 
 def load_csv(
     dataset: str, training: bool
-) -> tuple[pd.Series | None, pd.DataFrame | None]:
+) -> tuple[Optional[pd.Series], Optional[pd.DataFrame]]:
     """Loads and cleans a training or test dataset."""
+
+    if not os.path.exists(dataset):
+        print(f"ERROR : file {dataset} does not exist.")
+        return None, None
 
     try:
         df = pd.read_csv(dataset)

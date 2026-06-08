@@ -1,15 +1,13 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 from utils.load_csv import load_csv
 
 
 def display_histogram(df: pd.DataFrame, houses: pd.Series) -> None:
     """Displays the score distribution by house for the selected course."""
-
     course = "Care of Magical Creatures"
-
     plt.figure()
-
     plt.hist(
         df.loc[houses == "Ravenclaw", course],
         label="Ravenclaw",
@@ -34,7 +32,6 @@ def display_histogram(df: pd.DataFrame, houses: pd.Series) -> None:
         color="gold",
         alpha=0.5
     )
-
     plt.title(f"Score distribution by house for {course}")
     plt.xlabel("Notes")
     plt.ylabel("Students")
@@ -44,8 +41,13 @@ def display_histogram(df: pd.DataFrame, houses: pd.Series) -> None:
 
 def main() -> None:
     """Loads the training dataset and displays the selected histogram."""
-
-    y, df = load_csv("data/dataset_train.csv", True)
+    dataset_path = "./data/dataset_train.csv"
+    if not os.path.exists(dataset_path):
+        print(f"ERROR : file {dataset_path} does not exist.")
+        return
+    y, df = load_csv(dataset_path, True)
+    if df is None:
+        return
     display_histogram(df, y)
 
 

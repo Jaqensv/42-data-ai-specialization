@@ -14,3 +14,6 @@ venv/
 
 # Data
 *.csv
+
+# Tests
+tests/

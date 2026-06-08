@@ -125,7 +125,7 @@ def calculate_min_max(values) -> float:
     return min_value, max_value
 
 
-def calculate_stats(values: pd.Series) -> tuple[float | int]:
+def calculate_stats(values: pd.Series):
     """Calculates and displays statistics from the given dataframe."""
 
     ordered_values = None
